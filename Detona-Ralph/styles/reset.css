@@ -1,0 +1,11 @@
+* {
+    margin: 0; 
+    /* Remove todas as margens padrão de todos os elementos */
+    padding: 0; 
+    /* Remove todos os paddings padrão de todos os elementos */
+    box-sizing: border-box; 
+    /* Inclui o padding e a borda no tamanho total do elemento */
+    /* font-family: "Bebas Neue", sans-serif; */ 
+    font-family: "Press Start 2P", cursive; 
+}
+/* permite maior controle sobre o layout e evita espaços indesejados. */
