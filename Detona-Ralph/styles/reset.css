@@ -4,8 +4,9 @@
     padding: 0; 
     /* Remove todos os paddings padrão de todos os elementos */
     box-sizing: border-box; 
-    /* Inclui o padding e a borda no tamanho total do elemento */
-    /* font-family: "Bebas Neue", sans-serif; */ 
-    font-family: "Press Start 2P", cursive; 
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
 }
+  
 /* permite maior controle sobre o layout e evita espaços indesejados. */
