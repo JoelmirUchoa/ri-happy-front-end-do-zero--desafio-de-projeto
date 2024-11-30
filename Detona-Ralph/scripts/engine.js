@@ -16,7 +16,7 @@ const state = {
         gameVelocity: 1000,
         hitPosition: 0,
         result: 0,
-        currentTime: 60,
+        curretTime: 60,
     },
     // Ações do jogo
     actions: {
@@ -28,22 +28,22 @@ const state = {
 
 // Função para diminuir o tempo restante e verificar se o jogo acabou
 function countDown(){
-    state.values.currentTime--;
-    state.view.timeLeft.textContent = state.values.currentTime;
+    state.values.curretTime--;
+    state.view.timeLeft.textContent = state.values.curretTime;
 
     // Verifica se o tempo acabou
-    if (state.values.currentTime <= 0) {
+    if (state.values.curretTime <= 0) {
         clearInterval(state.actions.countDownTimerId);
         clearInterval(state.actions.timerId);
         alert("Game Over! O seu resultado foi:" + state.values.result);
     }
 }
 
-function playSound() {
-    let audio = new Audio("./src/audios/hit.m4a");
+function playSound(audioName) {
+    let audio = new Audio(`./src/audios/${audioName}.m4a`);
     audio.volume = 0.2;
     audio.play();
-}
+  }
 
 // Função para selecionar um quadrado aleatório e adicionar a classe "enemy" a ele
 function randomSquare() {
@@ -62,24 +62,24 @@ function randomSquare() {
 }
 
 // Função para adicionar listeners de eventos aos quadrados
-function addListenerHitbox() {
+function addListenerHitBox() {
     state.view.squares.forEach((square) => {
         square.addEventListener("mousedown", () => {
             // Verifica se o quadrado clicado é o mesmo da posição "hit"
             if(square.id === state.values.hitPosition){
-                state.values.result++
+                state.values.result++;
                 state.view.score.textContent = state.values.result;
                 state.values.hitPosition = null;
-                playSound();
+                playSound("hit");
             }
         });
     });
 }
 
 // Função de inicialização que chama a função addListenerHitbox
-function init() {
-    addListenerHitbox();
+function initialize() {
+    addListenerHitBox();
 }
 
 // Chama a função init para iniciar o programa
-init();
+initialize();
