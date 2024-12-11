@@ -29,7 +29,7 @@ for(let i = 0; i < emojis.length; i++){
 }
 
 function handleClick(){
-    if((openCards.length < 2){
+    if (openCards.length < 2){
         this.classList.add("boxOpen");
         openCards.push(this);
     }
